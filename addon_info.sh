@@ -15,7 +15,7 @@ fi
 
 # Gather information for Kubernetes Dashboard
 DSECRET=`kubectl get secrets -n kube-system --kubeconfig=$1 | grep default | awk '{print $1}'`
-echo "$DSECRET"
+# echo "$DSECRET"
 DTOKEN=`kubectl describe secret $DSECRET -n kube-system --kubeconfig=$1 | grep token: | awk '{print $2}'`
 # Print information for Kubernetes Dashboard
 echo ""
